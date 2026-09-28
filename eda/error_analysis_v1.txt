@@ -1,0 +1,136 @@
+threshold 0.6499999999999999
+shape: (5, 2)
+┌──────────────────┬────────┐
+│ outcome          ┆ len    │
+│ ---              ┆ ---    │
+│ str              ┆ u32    │
+╞══════════════════╪════════╡
+│ TP               ┆ 645539 │
+│ TN               ┆ 285290 │
+│ FN               ┆ 26940  │
+│ FP-unmatched-rec ┆ 5508   │
+│ FP-wrong-S1      ┆ 3374   │
+└──────────────────┴────────┘
+shape: (2, 5)
+┌─────────┬────────┬─────────┬───────┬────────────────────┐
+│ country ┆ len    ┆ fp_rate ┆ fn    ┆ fn_rate_of_matched │
+│ ---     ┆ ---    ┆ ---     ┆ ---   ┆ ---                │
+│ str     ┆ u32    ┆ f64     ┆ u32   ┆ f64                │
+╞═════════╪════════╪═════════╪═══════╪════════════════════╡
+│ India   ┆ 372954 ┆ 0.0106  ┆ 10565 ┆ 0.0417             │
+│ US      ┆ 593697 ┆ 0.0083  ┆ 16375 ┆ 0.0388             │
+└─────────┴────────┴─────────┴───────┴────────────────────┘
+shape: (2, 5)
+┌─────────┬────────┬─────────┬───────┬────────────────────┐
+│ r_is_s2 ┆ len    ┆ fp_rate ┆ fn    ┆ fn_rate_of_matched │
+│ ---     ┆ ---    ┆ ---     ┆ ---   ┆ ---                │
+│ f32     ┆ u32    ┆ f64     ┆ u32   ┆ f64                │
+╞═════════╪════════╪═════════╪═══════╪════════════════════╡
+│ 0.0     ┆ 497820 ┆ 0.0095  ┆ 13551 ┆ 0.0388             │
+│ 1.0     ┆ 468831 ┆ 0.0089  ┆ 13389 ┆ 0.041              │
+└─────────┴────────┴─────────┴───────┴────────────────────┘
+shape: (2, 5)
+┌─────────────┬────────┬─────────┬───────┬────────────────────┐
+│ r_is_domain ┆ len    ┆ fp_rate ┆ fn    ┆ fn_rate_of_matched │
+│ ---         ┆ ---    ┆ ---     ┆ ---   ┆ ---                │
+│ f32         ┆ u32    ┆ f64     ┆ u32   ┆ f64                │
+╞═════════════╪════════╪═════════╪═══════╪════════════════════╡
+│ 0.0         ┆ 929861 ┆ 0.0095  ┆ 26604 ┆ 0.0415             │
+│ 1.0         ┆ 36790  ┆ 0.0015  ┆ 336   ┆ 0.0099             │
+└─────────────┴────────┴─────────┴───────┴────────────────────┘
+shape: (2, 5)
+┌─────────────────┬────────┬─────────┬───────┬────────────────────┐
+│ r_name_nonlatin ┆ len    ┆ fp_rate ┆ fn    ┆ fn_rate_of_matched │
+│ ---             ┆ ---    ┆ ---     ┆ ---   ┆ ---                │
+│ f32             ┆ u32    ┆ f64     ┆ u32   ┆ f64                │
+╞═════════════════╪════════╪═════════╪═══════╪════════════════════╡
+│ 0.0             ┆ 906065 ┆ 0.0096  ┆ 26364 ┆ 0.0413             │
+│ 1.0             ┆ 60586  ┆ 0.0035  ┆ 576   ┆ 0.0156             │
+└─────────────────┴────────┴─────────┴───────┴────────────────────┘
+shape: (2, 5)
+┌──────────────┬────────┬─────────┬───────┬────────────────────┐
+│ r_addr_empty ┆ len    ┆ fp_rate ┆ fn    ┆ fn_rate_of_matched │
+│ ---          ┆ ---    ┆ ---     ┆ ---   ┆ ---                │
+│ f32          ┆ u32    ┆ f64     ┆ u32   ┆ f64                │
+╞══════════════╪════════╪═════════╪═══════╪════════════════════╡
+│ 0.0          ┆ 929110 ┆ 0.006   ┆ 14476 ┆ 0.0223             │
+│ 1.0          ┆ 37541  ┆ 0.0872  ┆ 12464 ┆ 0.4839             │
+└──────────────┴────────┴─────────┴───────┴────────────────────┘
+
+--- FP-wrong-S1 samples (record | predicted/best S1 | p)
+  R: FB India Private Ltd | 
+  S: FB India Private Limited | C/O Shyam/Hargovind Yadav, Yadav Complex Near Vc Bun, Sagar, Madhya Pradesh   p=0.87
+  R: Nichols, Valente & Gathings Communications | 
+  S: Nichols, Valente & Gathings Communications Inc. | 4844 99th Avenue, Portland, OR   p=0.81
+  R: Consulting Smita Solutions Ltd | 
+  S: Consulting Smita Solutions Ltd | Flat-A-16, 1St Floor, Jajodia Tower 3, Bentinck Street, Kolkata, Kolkata, Howrah, West Bengal   p=0.79
+  R: Brita Robb, D.C.LLC | 
+  S: Brita Robb, D.C. | 1601 Lynn Court, Prince William County, VA   p=0.71
+  R: Prairie Alliance Vi | 
+  S: Prairie Alliance VI | 1060 Valhalla Drive, Lawrenceburg, KY   p=0.89
+  R: Janeta Langley  Custom Utilities Inc | 
+  S: Janeta Langley Custom Utilities Inc | 7 Prospect Avenue, Goshen, NY   p=0.82
+  R: Physical Therapy Advanced Health Llc | 
+  S: Physical Therapy Advanced Health | 1158 Nancy Lane, Gilbert, AZ   p=0.67
+  R: Credible Media | 
+  S: Credible Media LLP | 909, 9Th Floor, Plot No. A-1, D-Mall Netaji Subhash Place, Pitampura, Delhi, North West, Delhi   p=0.77
+  R: 254 Union Street Apartments | 
+  S: 254 Union Street Apartments LLC | Unit 103, 7105 27th Street, CA, Sacramento   p=0.93
+  R: -- Ciranexyuma | NO. 3165, 1ST FLOOR, 60 FT SERVICE ROAD, HAL 2ND STAGE, BANGALORE NORTH, BANGALORE, Karnataka
+  S: Bangalore North Properties Limited | No. 3165, 1St Floor, 60 Ft Service Road, Hal 2Nd Stage, Bangalore North, Bangalore, Karnataka   p=0.85
+  R: Properties Mayra Estates Private | 
+  S: Properties Mayra Estates Private Limited | Flat No 406, Sri Srinivasa Classic, Geeta Nagar, Malkajgiri, Secunderabad, Hyderabad, Telangana   p=0.95
+  R: MERIT EDUCATIONAL SOCIETY | 
+  S: Merit Educational Society | S No 58/3/1 A 601 Kapil Woodrow Near Ruby Hall Clinic Azad Nagar Wanwadi, Pune, Maharashtra   p=0.77
+
+--- FP-unmatched-rec samples (record | predicted/best S1 | p)
+  R: Eastern Emxporohs Enterprises (Limited) | PLOT NO 50B, SECTOR 32, SADAR BAZAR, Haryana
+  S: Eastern Exports Limited | Plot No 37B, Sector 32, Sadar Bazar, Gurgaon, Haryana   p=0.79
+  R: Mr Eureka Brothers Private Limited | HN 12 130, SARJAN SOCIETY, OPP, SARGAM SHOPPING CENTER, SURAT, Gujarat
+  S: Eureka Brothers Ltd | 129, Sarjan Society, Opp, Sargam Shopping Center, Surat, Gujarat   p=0.76
+  R: Orthopedic Átlantic Group Group | MD, PO BOX 5731, 674 QUEENSBURY ST, MIDDLE RIVER
+  S: Orthopedic Atlantic Group | 6739 Queensbury Street, Middle River, MD   p=0.92
+  R: Corner Barbershop Services (ID: 12423) | Olympia, 78st Loop, Fl 1, Washington
+  S: Corner Barbershop! | 4248 Kyro Road, Fl 1, Olympia, WA   p=0.67
+  R: williams uranium inc | 404 2th Ave, Princeton, Indiana
+  S: Williams Uranium Inc. | IN, 402 Second Avenue, Princeton   p=0.94
+  R: Olanoyx Automobile | 2248 HARKSELL RD, FERNDALE, WA
+  S: Olanora Automobile | 2247 Harksell Road, Ferndale, WA   p=0.71
+  R: MONTELLEYN LIGHT CORPORATION | 673A JETT STREET, ATL, GA
+  S: Montelle Light Corporation | GA, 668 Jett Street, Atlanta, Unit 4   p=0.80
+  R: Kestola (6roup) | 
+  S: Kestola Group | 108 Burnside Court, Vernon Hills, IL   p=0.69
+  R: International College Limited | 37 C/o Punam Mangilal, Dhorimana, Barmer, Nh-68, Dhorimana, Barmer, RJ
+  S: International College | C/O Punam Mangilal, Dhorimana, Barmer, Nh-68, Dhorimana, Barmer, Rajasthan   p=0.88
+  R: ലോട്ടസ് ഗാലക്സി ടെക് ടെക്നോളജീസ് എൽഎൽപി | SUPREELA KRA ##70, KUTTIKADU LANE KAIMANAM, PAPPANAMCODE P O, THIRUVANANTHAPURAM, THIRUVANANTHAPURAM, TRIVANDRUM, Kerala
+  S: Lotus Galaxy Tech LLP | Supreela Kra 57, Kuttikadu Lane Kaimanam, Pappanamcode P O, Thiruvananthapuram, Thiruvananthapuram, Trivandrum, Kerala   p=0.99
+  R: Peridan Etf LLC | 3 1/2 POTAWATOMIE TRAIL, LA GRANGE CITY, IL
+  S: Peridon Etf LLC | 1 Potawatomie Trail, Indian Head Park, IL   p=0.69
+  R: Harb0r Ministries IIIK | 00114 FREDERICK CT, PRINCETON, WV
+  S: Harbor Ministries III | 114 Frederick Court, Princeton, WV   p=0.95
+
+--- FN samples (record | predicted/best S1 | p)
+  R: LINDERMAN RAPID [PENNANTPARK] | 134 N TOWNE CT NORTHEAST, CEDAR RAPIDS, IA
+  S: Linderman Rapid Pennantpark Inc | Cedar Rapids, IA, Unit 3, 2134 N Towne Ct NE   p=0.13
+  R: Trao Oriental Ltd | 
+  S: Trao Oriental | Bloomington, CA, 702 Lancewood Avenue   p=0.12
+  R: Big India Private Ltd | 
+  S: Big (india) Private Limited | F1 Anantha Residency, Plot No.12, Navodaya Colony Road No.14, Banjara Hills, Hyderabad, Telangana   p=0.28
+  R: Sri Panacea Encgindeering LLP | 
+  S: Panacea Engineering LLP | 1St Floor Block-H, Sector-11, H-4, Uttar Pradesh, Gautam Buddha Nagar, Noida   p=0.56
+  R: BLUE LEARNING CENTER LLC | 722 PLATEAU CT, HAGERSTOWN, MD
+  S: Blue Learning Center PC | 1072 Plateau Court, Hagerstown, MD   p=0.02
+  R: Km Institute of Technology Private | Uttar Pradesh, PLOT 245 GANGA COLONY MULTAN NAGAR, MEERUT
+  S: Km Institute of Technology Private Limited | Ganga Colony Multan Nagar, Meerut, Uttar Pradesh   p=0.54
+  R: Rosedale Economic Dévelopment Bay Fund | New York, 254-45 147 Drive, Rosedale
+  S: Rosedale Economic Development Bay Fund LLC | NY, 253-45 147 Drive, Rosedale   p=0.09
+  R: PIONEER FINANCIAL | 
+  S: Pioneer Financial, LLC | 4249 Hickory Road, Chesterfield County, VA   p=0.29
+  R: royal learning ventures corp | 
+  S: Royal Learning Ventures Corp | 807 First Street, Trenton, OH   p=0.57
+  R: North School of Medicine Ltd | 22 Market Road, SPRINGFIELD TWP, OH
+  S: North School of Medicine | Bidwell, 21 Market Road, OH   p=0.04
+  R: Sree Partners | HN 362 K K ASSOCIATES, ALAKULATH BUILDING PANCHAYATH OFFICE ROAD, CHEMPERI, KANNUR, Keralam
+  S: Sree Investments | K K Associates, Alakulath Building Panchayath Office Road, Chemperi, Kannur, Kerala   p=0.26
+  R: Liberty Ventures | 981 WOOD HOLLOW ROAD, VANSANT, VA
+  S: Liberty Ventures LLC | 1173 Wood Hollow Road, Buchanan County, VA   p=0.06

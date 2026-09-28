@@ -1,0 +1,13 @@
+blocking_evidence 24 ['b_word', 'b_skel', 'b_numword', 'b_key_compact', 'b_key_sorted', 'b_key_name_num', 'r_word', 'r_skel', 'r_numword', 'cos_word', 'cos_skel', 'cos_numword', 'cos_cname', 'cos_caddr', 'cos_word_gap_best', 'cos_word_rank', 'cos_skel_gap_best', 'cos_skel_rank', 'cos_cname_gap_best', 'cos_cname_rank', 'cos_caddr_gap_best', 'cos_caddr_rank', 'cos_numword_gap_best', 'cos_numword_rank']
+name 25 ['n_ratio', 'n_tset', 'n_tsort', 'n_partial', 'n_jw', 'n_compact_ratio', 'n_compact_partial', 'n_skel_ratio', 'n_skel_tset', 'n_full_ratio', 'name_in_s1addr', 'n_jacc', 'n_ovl', 'legal_eq', 'legal_conflict', 'n_compact_eq', 'n_acro', 'len_n1', 'len_n2', 'n_tset_gap_best', 'n_tset_rank', 'n_ratio_gap_best', 'n_ratio_rank', 'n_skel_ratio_gap_best', 'n_skel_ratio_rank']
+address 25 ['a_ratio', 'a_tset', 'a_tsort', 'a_partial', 'aw_tset', 'a_skel_tset', 'dig_ratio', 'dig_partial', 'aw_jacc', 'aw_ovl', 'num_jacc', 'num_ovl', 'alnum_jacc', 'num_n1', 'num_n2', 'a_eq', 'dig_eq', 'len_a1', 'len_a2', 'a_tset_gap_best', 'a_tset_rank', 'aw_tset_gap_best', 'aw_tset_rank', 'dig_ratio_gap_best', 'dig_ratio_rank']
+house_number 5 ['house_lev', 'house_eq', 'house_part', 'house_logdiff', 'house_in_s1nums']
+flags 6 ['r_is_domain', 'r_name_nonlatin', 'r_addr_nonlatin', 'r_addr_empty', 'r_addr_pobox', 'r_is_s2']
+context_rarity 16 ['n_cand_rid', 'n_name_ties', 'n_addr_ties', 'n_tset_2nd', 'a_tset_2nd', 'caddr_gap_in_name_ties', 's1_name_freq', 's1_sorted_freq', 's1_addr_freq', 's1_n_cand', 's1_n_top1_word', 's1_n_top1_skel', 'r_name_freq', 'r_addr_freq', 'r_name_vocab_frac', 'r_name_min_logfreq']
+ALL (baseline)                   n_feat=101 logloss=0.00553 iters=400 | best t=0.70 F0.5=0.98091 P=0.9946 R=0.9577 singles=0.9795  (129s)
+minus blocking_evidence          n_feat= 77 logloss=0.00558 iters=414 | best t=0.64 F0.5=0.98074 P=0.9937 R=0.9590 singles=0.9771  (101s)
+minus name                       n_feat= 76 logloss=0.00813 iters=328 | best t=0.64 F0.5=0.97108 P=0.9877 R=0.9489 singles=0.9594  (85s)
+minus address                    n_feat= 76 logloss=0.00652 iters=416 | best t=0.67 F0.5=0.97661 P=0.9917 R=0.9534 singles=0.9708  (101s)
+minus house_number               n_feat= 96 logloss=0.00603 iters=395 | best t=0.65 F0.5=0.97913 P=0.9932 R=0.9568 singles=0.9736  (119s)
+minus flags                      n_feat= 95 logloss=0.00570 iters=423 | best t=0.63 F0.5=0.98041 P=0.9930 R=0.9596 singles=0.9752  (119s)
+minus context_rarity             n_feat= 85 logloss=0.00688 iters=411 | best t=0.69 F0.5=0.97641 P=0.9902 R=0.9534 singles=0.9628  (101s)

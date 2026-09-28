@@ -1,0 +1,110 @@
+queries=100,000  with a true S1=73,822
+  [US] word k=20: 60,029 queries x 1,323,633 S1 -> 1,197,794 pairs in 32s
+  [US] skel k=20: 60,029 queries x 1,323,633 S1 -> 1,198,456 pairs in 36s
+  [US] name_c4 k=20: 60,029 queries x 1,323,633 S1 -> 1,178,575 pairs in 27s
+  [India] word k=20: 39,971 queries x 883,188 S1 -> 796,594 pairs in 45s
+  [India] skel k=20: 39,971 queries x 883,188 S1 -> 797,520 pairs in 37s
+  [India] name_c4 k=20: 39,971 queries x 883,188 S1 -> 789,318 pairs in 8s
+
+Recall@k by view (fraction of matched records whose true S1 is in the view's top-k):
+shape: (3, 6)
+┌─────────┬────────┬────────┬────────┬────────┬────────┐
+│ view    ┆ @1     ┆ @3     ┆ @5     ┆ @10    ┆ @20    │
+│ ---     ┆ ---    ┆ ---    ┆ ---    ┆ ---    ┆ ---    │
+│ str     ┆ f64    ┆ f64    ┆ f64    ┆ f64    ┆ f64    │
+╞═════════╪════════╪════════╪════════╪════════╪════════╡
+│ name_c4 ┆ 0.4556 ┆ 0.5831 ┆ 0.6255 ┆ 0.6657 ┆ 0.7018 │
+│ skel    ┆ 0.8955 ┆ 0.9343 ┆ 0.9454 ┆ 0.9567 ┆ 0.9639 │
+│ word    ┆ 0.9242 ┆ 0.9528 ┆ 0.9608 ┆ 0.9679 ┆ 0.9734 │
+└─────────┴────────┴────────┴────────┴────────┴────────┘
+
+Union recall (k per view) and avg candidates per record:
+  k= 3 word                                                    recall=0.9528  cands/rec=3.0
+  k= 3 skel                                                    recall=0.9343  cands/rec=3.0
+  k= 3 name_c4                                                 recall=0.5831  cands/rec=3.0
+  k= 3 word+skel                                               recall=0.9591  cands/rec=4.1
+  k= 3 word+name_c4                                            recall=0.9620  cands/rec=5.2
+  k= 3 word+skel+name_c4                                       recall=0.9668  cands/rec=6.4
+  k= 5 word                                                    recall=0.9608  cands/rec=5.0
+  k= 5 skel                                                    recall=0.9454  cands/rec=5.0
+  k= 5 name_c4                                                 recall=0.6255  cands/rec=4.9
+  k= 5 word+skel                                               recall=0.9660  cands/rec=7.2
+  k= 5 word+name_c4                                            recall=0.9683  cands/rec=9.0
+  k= 5 word+skel+name_c4                                       recall=0.9724  cands/rec=11.1
+  k=10 word                                                    recall=0.9679  cands/rec=10.0
+  k=10 skel                                                    recall=0.9567  cands/rec=10.0
+  k=10 name_c4                                                 recall=0.6657  cands/rec=9.9
+  k=10 word+skel                                               recall=0.9728  cands/rec=14.9
+  k=10 word+name_c4                                            recall=0.9748  cands/rec=18.5
+  k=10 word+skel+name_c4                                       recall=0.9784  cands/rec=23.3
+  k=20 word                                                    recall=0.9734  cands/rec=19.9
+  k=20 skel                                                    recall=0.9639  cands/rec=20.0
+  k=20 name_c4                                                 recall=0.7018  cands/rec=19.7
+  k=20 word+skel                                               recall=0.9776  cands/rec=30.2
+  k=20 word+name_c4                                            recall=0.9800  cands/rec=37.7
+  k=20 word+skel+name_c4                                       recall=0.9832  cands/rec=47.8
+
+Recall by country / source (char_full+skel_name+word_addr @10):
+shape: (4, 4)
+┌─────────┬─────┬──────────┬───────┐
+│ country ┆ src ┆ recall   ┆ len   │
+│ ---     ┆ --- ┆ ---      ┆ ---   │
+│ str     ┆ str ┆ f64      ┆ u32   │
+╞═════════╪═════╪══════════╪═══════╡
+│ India   ┆ S2  ┆ 0.966701 ┆ 14355 │
+│ India   ┆ S3  ┆ 0.959056 ┆ 15167 │
+│ US      ┆ S2  ┆ 0.987264 ┆ 21435 │
+│ US      ┆ S3  ┆ 0.990203 ┆ 22865 │
+└─────────┴─────┴──────────┴───────┘
+
+Sample misses:
+  REC: Pediatric-Dental Atlantic |  
+   S1: Pediatric Dental Atlantic Physicians Inc | 6000 Sneedsboro Road, Morven, NC
+  REC: Private Raj Dévelopers Limited | 7, SADAR BAZAR, Haryana 
+   S1: Raj Developers Private Limited | 3799/7, Laxman Vihar, Ph-Ii, Gurugram, Sadar Bazar, Gurgaon, Haryana
+  REC: Sri Baba Slotuois Company | Plot G-608 Plot No-33, Faridabad, HR 
+   S1: Baba Solutions Company | Plot No-33, Gali No-9B Sururpur Industrial Area, Faridabad, Haryana
+  REC: Pediatric Dentistry Service Enterprises |  
+   S1: Pediatric Dentistry Associates | 12029 Fm 2100, Crosby, TX
+  REC: இன்னோவேட்டிவ் Hospitality பிரைவேட் லிமிடெட் | 4(8), Chennai, TN 
+   S1: Innovative Hospitality Pvt Ltd | 4(8), Anjugam Nagar 1St Street, Anjugam Nagar, Jafferkhanpet, Chennai, Tamil Nadu
+  REC: Swastik Developers | পশ্চিমবঙ্গ, 13, Kolkata 
+   S1: Swastik Developers Pvt Ltd | 13, Narayan Prosad Babu Lane, Kolkata, Howrah, West Bengal
+  REC: VAPPLIANCES.COM | महाराष्ट्र, A/002, THANE 
+   S1: Voice Appliances Limited | A/002, Ashok Nagar A Bldg Chs Ltd Station Road, Near Datta Mandir, Bhayand, Er West, Thane, Maharashtra
+  REC: Hs Chambers Law |  
+   S1: Hs Law Chambers | Altf 101, Mr-01, Okhla - 1St Floor, 101, Nh-19, Crri, Ishwar Nagar, Okhla, New Delhi, South Delhi, Delhi
+  REC: eastrealindustries.com | 101, Gandhidham, Kachchh, ગુજરાત 
+   S1: East Real Industries LLP | Kachchh, 101, Ff, Plot No 275, Tripada Complex Sector 1A, Gandhidham, Gujarat
+  REC: Shaikpet Limited Center | 4Th Floor, Shaikpet, Hyderabad, TG 
+   S1: Shaikpet Traders Limited | 4Th Floor, Unit No. 405-411, Bizness Square, H. No. 1-98/3/5/23 To 27, Jubilee Enclave, Sy No. 66 & 67, Shaikpet, Hyderabad, Telangana
+  REC: easttechnology.com | #804 40, South Delhi, दिल्ली 
+   S1: East Technology Pvt Ltd | 40, G/F, Zamrudpur, New Delhi, South Delhi, Delhi
+  REC: प्राइम हॉस्पिटैलिटी प्राइवेट लिमिटेड | PLOT NO B-#33, JAIPUR, NULL, Rajasthan 
+   S1: Prime Hospitality Private Limited | Plot No B-33, Budha Vihar, Budhsinghpura, Sanganer, Jaipur, Rajasthan
+  REC: ईस्ट इंजीनियरिंग प्रा. लि. | IIND FLOOR, VILE PARLE (E), Maharashtra 
+   S1: East Engineering Pvt Ltd | Maharashtra, Iind Floor, Sarda Vishnu Vihar Sadan, Nanda Patkar Road, Vile Parle (E), Mumbai
+  REC: Cardiology Cáre Associates |  
+   S1: Cardiology Care Associates | Mill Neck, 110 Frost Mill Road, NY
+  REC: Behavioral Partners Services | 010774 Montgomery Road, CINCINNATI CITY, OH 
+   S1: Behavioral Health Partners | Cincinnati, 10774 Montgomery Road, OH
+  REC: Family Inc  Health Pinnacle | 189 FIFTH AVE, COLUMBUS, OH 
+   S1: Family Pinnacle Health Inc | 515 5th Avenue, OH, Unit 242, Columbus
+  REC: BEHAVIORAL HEALTH CLINIC INC |  
+   S1: Behavioral Health Clinic Inc | 3408 Pin Oak Lane, Bedford, TX
+  REC: Summit Heartland |  
+   S1: Summit Heartland Farmers Center | 114 Coronado Road, Corrales, NM
+  REC: SHREE CONSULTANCY LIMITED Enterprises |  
+   S1: Shree Consultancy | N-3 Cidco, Nr Chhatrapatil College, Aurangabad, Maharashtra, Plot No 24
+  REC: बॉम्बे कृष्ण इंटरनेशनल एलएलपी | B-7, NEW DELHI, KAROL BAGH, Delhi 
+   S1: Bombay Krishna International LLP | B-7, Namdhari Chamber 9/54, Deshbandu Gupta Road, Karol Bagh, New Delhi, Delhi
+  REC: बॉम्बे सुपर इंडस्ट्रीज प्राइवेट लिमिटेड | 1902, MUMBAI, MUMBAI CITY, Maharashtra 
+   S1: Bombay Super Industries Private Limited | 1902, Floor-19, Plot-Cs 1587 Horizon, Gokhale Road(North), Dadar West, Mumbai, Mumbai City, Maharashtra
+  REC: Jain Private Energy Super Limited | New Delhi, South, DL, Shop No. 17 
+   S1: Jain Super Energy Private Limited | Shop No. 17, Dda Market Zamrudpur Near Greater Kailash -1, New Delhi, Delhi
+  REC: रियल प्रोडक्ट्स | 56, NULL, INDORE, Madhya Pradesh 
+   S1: Real Products | Indore, 56, Madhya Pradesh, New Dewas Road, Indore
+  REC: East Private Limited Services | ##101, N/A, (E), Thane, MH 
+   S1: East Patil Private Limited | 101, Shiv Darshan, Bldg No. 3, Ostwal Nagari, Central Park, Nallasopara, (E), Thane, Maharashtra
+  REC: Signature Aogto Inc |  
+   S1: Signature Auto Inc | 285 County Road 748, Buna, TX

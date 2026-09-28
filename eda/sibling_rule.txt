@@ -1,0 +1,18 @@
+baseline t=0.65                               F0.5=0.97817 singles=0.9746 P=0.9933 R=0.9547 n=368,611
+HI=0.9 LO=0.2 empty_only=True (+315)          F0.5=0.97811 singles=0.9746 P=0.9931 R=0.9550 n=368,789
+HI=0.9 LO=0.2 empty_only=False (+1,433)       F0.5=0.97734 singles=0.9746 P=0.9915 R=0.9559 n=369,738
+HI=0.9 LO=0.3 empty_only=True (+294)          F0.5=0.97811 singles=0.9746 P=0.9931 R=0.9550 n=368,776
+HI=0.9 LO=0.3 empty_only=False (+1,068)       F0.5=0.97768 singles=0.9746 P=0.9921 R=0.9557 n=369,434
+HI=0.9 LO=0.4 empty_only=True (+252)          F0.5=0.97813 singles=0.9746 P=0.9932 R=0.9550 n=368,749
+HI=0.9 LO=0.4 empty_only=False (+775)         F0.5=0.97792 singles=0.9746 P=0.9926 R=0.9555 n=369,189
+HI=0.97 LO=0.2 empty_only=True (+317)         F0.5=0.97810 singles=0.9746 P=0.9931 R=0.9550 n=368,792
+HI=0.97 LO=0.2 empty_only=False (+1,387)      F0.5=0.97734 singles=0.9746 P=0.9915 R=0.9559 n=369,720
+HI=0.97 LO=0.3 empty_only=True (+296)         F0.5=0.97810 singles=0.9746 P=0.9931 R=0.9550 n=368,779
+HI=0.97 LO=0.3 empty_only=False (+1,037)      F0.5=0.97768 singles=0.9746 P=0.9921 R=0.9557 n=369,423
+HI=0.97 LO=0.4 empty_only=True (+254)         F0.5=0.97812 singles=0.9746 P=0.9931 R=0.9550 n=368,753
+HI=0.97 LO=0.4 empty_only=False (+758)        F0.5=0.97791 singles=0.9746 P=0.9926 R=0.9555 n=369,186
+empty-address threshold 0.5                   F0.5=0.97786 singles=0.9717 P=0.9922 R=0.9565 n=369,693
+empty-address threshold 0.6                   F0.5=0.97810 singles=0.9737 P=0.9929 R=0.9553 n=368,978
+empty-address threshold 0.7                   F0.5=0.97819 singles=0.9760 P=0.9936 R=0.9541 n=368,281
+empty-address threshold 0.8                   F0.5=0.97821 singles=0.9775 P=0.9939 R=0.9534 n=367,893
+empty-address threshold 0.9                   F0.5=0.97805 singles=0.9776 P=0.9940 R=0.9525 n=367,496

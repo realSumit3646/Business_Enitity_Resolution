@@ -1,0 +1,175 @@
+threshold=0.6499999999999999  true pairs in V: 383,501
+shape: (4, 3)
+┌────────────────────────────┬────────┬────────┐
+│ why                        ┆ len    ┆ share  │
+│ ---                        ┆ ---    ┆ ---    │
+│ str                        ┆ u32    ┆ f64    │
+╞════════════════════════════╪════════╪════════╡
+│ 0 found                    ┆ 366819 ┆ 0.9565 │
+│ 1 blocking miss            ┆ 7182   ┆ 0.0187 │
+│ 2 another S1 ranked higher ┆ 3283   ┆ 0.0086 │
+│ 3 right S1 but p<t         ┆ 6217   ┆ 0.0162 │
+└────────────────────────────┴────────┴────────┘
+shape: (6, 3)
+┌────────────────────────────┬────────────┬──────┐
+│ why                        ┆ addr_empty ┆ len  │
+│ ---                        ┆ ---        ┆ ---  │
+│ str                        ┆ bool       ┆ u32  │
+╞════════════════════════════╪════════════╪══════╡
+│ 1 blocking miss            ┆ false      ┆ 3409 │
+│ 1 blocking miss            ┆ true       ┆ 3773 │
+│ 2 another S1 ranked higher ┆ false      ┆ 512  │
+│ 2 another S1 ranked higher ┆ true       ┆ 2771 │
+│ 3 right S1 but p<t         ┆ false      ┆ 4165 │
+│ 3 right S1 but p<t         ┆ true       ┆ 2052 │
+└────────────────────────────┴────────────┴──────┘
+shape: (6, 3)
+┌────────────────────────────┬─────────┬──────┐
+│ why                        ┆ country ┆ len  │
+│ ---                        ┆ ---     ┆ ---  │
+│ str                        ┆ str     ┆ u32  │
+╞════════════════════════════╪═════════╪══════╡
+│ 1 blocking miss            ┆ India   ┆ 4248 │
+│ 1 blocking miss            ┆ US      ┆ 2934 │
+│ 2 another S1 ranked higher ┆ India   ┆ 1067 │
+│ 2 another S1 ranked higher ┆ US      ┆ 2216 │
+│ 3 right S1 but p<t         ┆ India   ┆ 2928 │
+│ 3 right S1 but p<t         ┆ US      ┆ 3289 │
+└────────────────────────────┴─────────┴──────┘
+
+false links into V: 2,543   (record has a true S1 elsewhere: 516)
+shape: (2, 2)
+┌────────────┬──────┐
+│ addr_empty ┆ len  │
+│ ---        ┆ ---  │
+│ bool       ┆ u32  │
+╞════════════╪══════╡
+│ true       ┆ 389  │
+│ false      ┆ 2154 │
+└────────────┴──────┘
+
+--- BLOCKING MISSES (record vs its true S1)
+  R: ssestateprivate.com | H.no 3Rd Floor, Gachibowli, Hyderabad, Andhra Pradesh
+  S: Ss Estate Private Limited | 3Rd Floor, Vindhya C5 Iit-H Campus Survey No 25, Gachibowli, Hyderabad, Telangana
+  R: CX Limited Partners | 
+  S: CX Logistics Limited | Maharashtra, 5/3 Indraprastha Appt. Chaprasopura Jail Rd. Cam Chaprasipura Amravati, Amravati
+  R: बिग एनर्जी प्राइवेट लिमिटेड | MH, Aurangabad, P No 01, Aurangabad
+  S: Big Energy Private Limited | P No 01, G No 216, Satara Parisar Deolai Sataraga, Aurangabad, Maharashtra
+  R: Patriot Áfadia LLC | North Carolina, Raeligh, ##522 West St, NULL
+  S: Patriot Acadia LLC | 500 West Street, Unit 214, Raleigh, NC
+  R: Small LLC Center | 
+  S: Small Multimedia, LLC | 17910 Brook Way Street, Hockley, TX
+  R: Richmond Richmond Clean Rights Human | 
+  S: Richmond Human Rights Clean Institute | Richmond, TX, 8619 Valiant Knolls Drive
+  R: পায়োনিয়ার টেকনোলজিস লিমিটেড | পশ্চিমবঙ্গ, 25/B, KOLKATA
+  S: Pioneer Technologies Limited | 25/B, Pathakpara Road Lp 7/16, Kolkata, Kolkata, Howrah, West Bengal
+  R: DOWNTOWN CLEANING SERVICE INC | 
+  S: Downtown Cleaning Service Inc | 2870 Maysville Pike, Unit 57, Zanesville, OH
+  R: M/s Universal Investments-Limited | 211, Mumbai, MH
+  S: Universal Investments Limited | Mumbai, 211, Maharashtra, Floor-2, Plot-16, Jewel Roxy Chambers, Mama
+  R: Tavozeta | 2ND FLOOR, BANGALORE NORTH, BANGALORE, Karnataka
+  S: Madhuban Appliances of Bangalore North Private Limited | 2Nd Floor, Nxt-Tower 2, Embassy Manyata Business Park, Outer Ring Road, Nagavara, Bangalore North, Bangalore, Karnataka
+  R: गुरु इंजीनियरिंग प्राइवेट लिमिटेड | MUMBAI CITY, MUMBAI, Maharashtra, SHOP. NO.2
+  S: Guru Engineering Private Limited | Mumbai, Maharashtra, Kanabhai Shava Chawl Khot Kuva Road, Malad East, Shop. No.2, Mumbai City
+  R: médiaroya1.com | 15., Bangalore, Bengaluru, KA
+  S: Royal Media Pvt Ltd | 15, 1St Main, 3Rd Stage, Vinayaka Layout, Bangalore, Karnataka
+  R: virginiabeachcity.com | 658 Edwardian Ct, Virginia Beach City, Virginia
+  S: Virginia Beach City Interfaith Project | 4658 Edwardian Court, Virginia Beach City, VA
+  R: BPUJ.COM | G-502, MUMBAI, MUMBAI CITY, Maharashtra
+  S: UJ Boards Private Limited | Maharashtra, Mumbai City, Mumbai, 5Th Floor, Shaniya Enclave V P Road, Vile Parle West, 502
+  R: Certified Supply | 
+  S: Certified Supply Studios L.L.C. | 103 Maxxis Lane, De Queen, AR
+  R: Vision Clinic Llc & Co | 
+  S: Vision Clinic LLC | 703 72nd Street, East Saint Louis, IL
+  R: Blue Foundation Límited | H.no 18, Bangalore, Bengaluru Urban, KA
+  S: Blue Foundation Limited | # 18, Sy No - 171, Ambalipura, Bangalore, Karnataka
+  R: Barros Co Partners | 
+  S: Barros Hill Co | 8451 Jericho Way, Plain City, OH
+  R: Straight Edge Tavern | 
+  S: Straight Edge Tavern LLC | 2652 Holmes Drive, Sullivan, IN
+  R: APINNOVATIONS.COM | S-B3/3, SOUTH DELHI, NEW DELHI, Delhi
+  S: Aarvin Innovations Private Limited | S-3, G/F, Greater Kailash-1, New Delhi, South Delhi, Delhi
+  R: Prairie Academy (Center) | 200-202 CREEK RD, ITHACA, NY
+  S: Prairie Preparatory Academy | 200 Creek Road, Unit Apartment 33, Dryden, NY
+  R: Anandi Pvt Ltd Center | 
+  S: Anandi (india) Pvt Ltd | 211, Floor-2, Plot-37, Kshamalaya, Vitthaldas Thackarsey Marg, New Marine Lines, Churc, Hgate, Mumbai, Mumbai City, Maharashtra
+  R: East Constructions L.L.P. | 
+  S: East Constructions LLP | S.No.06 H.No.2/1(P-2/221), Stellar Spaces Offic Pune, Pune City, Pune, Maharashtra
+  R: ASSET BUILDING FELLOWSHIP LLC | 
+  S: Asset Building Fellowship LLC | NY, Lorraine, 4065 Loomis Road
+  R: Praya Praya Consultancy Private Limited | C-a-92, South West Delhi, New Delhi, DL
+  S: Prayas Consultancy Private Limited | C-92, Katwaria Sarai, New Delhi, South West Delhi, Delhi
+
+--- LOW SCORE, has address
+  R: Vivekanand (India) Creation Private | I Flrenkaytowerplotnob&b##1, Industrial Complex Dundahera, Gurgaon, HR
+  S: Vivekanand (India) Creation Private Limited | I Flrenkaytowerplotnob&B1, Vanijyanikunjudyogviharpv, Industrial Complex Dundahera, Gurgaon, Haryana
+  R: National Infrastructure | 870 Washington Street, NULL, Braintree CITY, Massachusetts
+  S: National Infrastructure Technologies Partners | 550 Washington Street, Braintree, Unit 218, MA
+  R: Smt Sumo Ienhtnge Ltd | Flat No-3, Arambha Park Nr Anand Park, Sno 49/1, Wadgaon Sheri Pune, Pune, MH
+  S: Sumo Institute Ltd | Flat No-4, Arambha Park Nr Anand Park, Sno 49/1, Wadgaon Sheri Pune, Pune City, Pune, Maharashtra
+  R: Shri HORUS WBGNECOM (INDIA) ASSOCIATES | हरियाणा, 894P, SECTRO-5, SADAR BAZAR
+  S: Horus Webcom (India) Associates | 894P, Sector-5, Sadar Bazar, Gurgaon, Haryana
+  R: Balaji-Consulting | 7-08 Nilamber Triumph, Vadodara, GJ
+  S: Balaji Consulting Private Limited | 708 Nilamber Triumph, Nilamber Circle, Bhayli, Vadodara, Vadodara, Gujarat
+  R: Lumcalo | No.128, 3Rd Stage 2Nd Block, Basaveshwarnagar, Bengaluru, Bangalore, KA
+  S: Blue Finance Limited | No.128, 3Rd Stage 2Nd Block, Basaveshwarnagar, Bengaluru, Bangalore, Karnataka
+  R: Womens Health Clinic | 557 TURTLE NECK RD, ALEXANDER CITY, AL
+  S: Womens Health Clinic LLC | 570 Turtle Neck Road, Alexander City, AL
+  R: Young Alpex Inc Services | 326 Ostend Place, Far Rockaway, New York
+  S: Young Metro Alpex Inc | 339 Ostend Place, Far Rockaway, NY
+  R: Vargas LLC (Partners) | 210 1/2 Savannah Garden Drive, Carthage, North Carolina
+  S: Vargas Management LLC | Carthage, NC, 205 Savannah Garden Drive
+  R: Tireex Glass | 2503- WALLACE RD, SALEM, OR
+  S: Tireex Glass LLC | Unit 206, OR, 2505 Wallace Road, Salem
+  R: Mr Elite Private Limited Center | Karnataka, NO.6-5-7-1044/27 , RADHARANG BHOJARAO LANE, KAMBLA CROSS ROAD, MANGALORE
+  S: Elite Mobility Private Limited | No.5-7-1044/27, Radharang Bhojarao Lane, Kambla Cross Road, Mangalore, Dak. Kannada, Karnataka
+  R: West Jeevan Chhaya Nagar Wellness (Public) | Nagpur, West Jeevan Chhaya Nagar, MH, #1-5
+  S: West Jeevan Chhaya Nagar Wellness Public Limited | Plot No 15, West Jeevan Chhaya Nagar, Nagpur, Maharashtra
+  R: Essdee Performance L.L.P. | MH, Bombay, Mumbai City, No 10/18Sarawat Colony Santacruz (West)
+  S: Essdee Performance LLP | 10/18Saraswat Colony Santacruz (West), Mumbai, Mumbai City, Maharashtra
+  R: Nova Inasamsbems  Private Limited | E-86/6, MALCHA MARG, DIPLOMATIC ENCLAVE, Delhi
+  S: Nova Infosystems Private Limited | E-86, Malcha Marg, Diplomatic Enclave, New Delhi, Delhi
+  R: D5 Auto LLC Center | 404  CHESTNUT STREET, CARLINVILLE, IL
+  S: DS Auto Sales LLC | 404 Chestnut Street, Carlinville, IL
+  R: Builders Internet Developers Private | 7-69/1944, MYTHRI BUILDING, PM KUTTY ROAD, EAST NADAKKAV, KACHERI VILLAGE, KOZHIKODE DISTRICT, KOZHIKODE, Kerala
+  S: Builders Internet Developers Private Limited | 69/1944, Mythri Building, Pm Kutty Road, East Nadakkav, Kacheri Village, Kozhikode District, Kozhikode, Kerala
+  R: Arrive  (India) Colours | Shop No.4-1, Mumbai City, Fort Mumbai, महाराष्ट्र
+  S: Arrive (India) Colours Limited | Mumbai, Shop No.1, Maharashtra, Mumbai City, Ground Floor, 5 Dossa House Gunbow Street, Fort
+  R: Tata and Stevens Partners | 80 GREENWOOD DR, GREENSBORO, NC
+  S: Tata and Stevens | 801 Greenwood Drive, NC, Greensboro
+  R: Thakur Products (India) Pvt | N-4-8, South Delhi, DL
+  S: Thakur Products (India) Pvt Ltd | N-8, Unit No.-2, Basement Panchsheel Park, New Delhi, South Delhi, Delhi
+  R: Collins Diamond Granite | 2114 VILLAGE DR, LOUSIVILLE, KY
+  S: Collins Diamond Granite PC | 2116 Village Dr, Unit 1, Louisville, KY
+
+--- WRONG S1 RANKED FIRST (record vs its true S1)
+  R: Serium Genetics L.L.C. | 
+  S: Serium Genetics LLC | 863 Oak Woods Road, North Berwick, ME
+  R: FAYETAVO | 1761 473, BLANCO, TX
+  S: 20/13 Iron Works LLC | 1761 473, Blanco, TX
+  R: Gangaya  Service | 
+  S: Gangaya Infra | C-97, Sector-16, Shastri Nagar, Ghaziabad, Uttar Pradesh
+  R: ASJ Circuits Private Private | 
+  S: ASJ Circuits Private Limited | M301, Magnum Opus Apts, 1St Main, 5Th Cross Venkatadri Layout, Panduranga Nagar, Bangalore, Karnataka
+  R: ASTRA ADAMS | 
+  S: Astra Adams Cantor LLC | 11807 Craig Road, Scott, AR
+  R: Alexa Lowery Tri-5tate Health | 
+  S: Alexa Lowery Tri-State Health Corp | 554 Norton Parkway, New Haven, CT
+  R: Nexova Social Enterprises | 
+  S: Nexova Social | 142 Spring Lakes Haven, Spring, TX
+  R: Smith, Pardo & Funk Home Cáre Inc | 
+  S: Smith, Pardo & Funk Home Care Inc | 6933 Knob Hill Road, Fort Worth, TX
+  R: Eminent Solutions Pvt Ltd. | 
+  S: Eminent Solutions Pvt Ltd | Pune, Maharashtra, Pune City, Sno 129Nr Fly Over Bridge, Flno 5 Fly View Residency
+  R: Vintage Limited Beverages | 
+  S: Vintage Beverages Limited | Bren Imperia Wing 3 1606 Bangalore Karnataka, Bangalore, Karnataka
+  R: Nagpur Developers Ltd. | 
+  S: Nagpur Developers Ltd | Indora Modle Town Plot No. Mt/17, Nagpur, Maharashtra
+  R: RDP SANGH LLP | 
+  S: Rdp Sangh | Flat No 10, Civil Line Prestige Apartment, Jabalpur, Madhya Pradesh
+  R: Jaxnyla | 11 Hanna Drive, Maine, East Waterboro
+  S: Siana Johnson Works LLC | Waterboro, ME, 61 Hanna Drive
+  R: Mr rohini music | 
+  S: Rohini Music | L-14, Ground Floor, Udyog Nagar-I Udyog Nagar, Delhi, West Delhi, Delhi
+  R: K L & X Ses | 
+  S: K L & X Ses LLC | 1201 Osprey Lane, Concord, TN

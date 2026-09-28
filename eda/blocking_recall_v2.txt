@@ -1,0 +1,87 @@
+  [India] word k=10: 39,971 x 883,188 -> 398,905 in 27s
+  [India] skel k=10: 39,971 x 883,188 -> 399,095 in 22s
+  [India] numword k=10: 39,971 x 883,188 -> 326,846 in 17s
+  [India] key_compact: 30,054
+  [India] key_sorted: 29,485
+  [US] word k=10: 60,029 x 1,323,633 -> 599,130 in 28s
+  [US] skel k=10: 60,029 x 1,323,633 -> 599,467 in 24s
+  [US] numword k=10: 60,029 x 1,323,633 -> 251,695 in 14s
+  [US] key_compact: 67,763
+  [US] key_sorted: 68,688
+blocking time 134s for 100,000 queries
+queries=100,000 matched=73,822
+
+Single views:
+  word@3                                                       recall=0.9604 cands/rec=  3.0
+  word@5                                                       recall=0.9683 cands/rec=  5.0
+  word@10                                                      recall=0.9752 cands/rec= 10.0
+  skel@3                                                       recall=0.9432 cands/rec=  3.0
+  skel@5                                                       recall=0.9540 cands/rec=  5.0
+  skel@10                                                      recall=0.9645 cands/rec= 10.0
+  numword@3                                                    recall=0.7254 cands/rec=  2.1
+  numword@5                                                    recall=0.7398 cands/rec=  3.2
+  numword@10                                                   recall=0.7506 cands/rec=  5.8
+  key_compact                                                  recall=0.4637 cands/rec=  1.0
+  key_sorted                                                   recall=0.4598 cands/rec=  1.0
+
+Combos:
+  word@3 skel@3 numword@0 + keys                               recall=0.9719 cands/rec=  4.6
+  word@5 skel@5 numword@0 + keys                               recall=0.9763 cands/rec=  7.5
+  word@5 skel@5 numword@3 + keys                               recall=0.9781 cands/rec=  8.7
+  word@5 skel@3 numword@3 + keys                               recall=0.9775 cands/rec=  7.5
+  word@10 skel@5 numword@3 + keys                              recall=0.9814 cands/rec= 13.0
+  word@10 skel@10 numword@5 + keys                             recall=0.9825 cands/rec= 17.0
+  word@10 skel@10 numword@10 + keys                            recall=0.9829 cands/rec= 19.3
+shape: (4, 4)
+┌─────────┬─────┬──────────┬───────┐
+│ country ┆ src ┆ recall   ┆ len   │
+│ ---     ┆ --- ┆ ---      ┆ ---   │
+│ str     ┆ str ┆ f64      ┆ u32   │
+╞═════════╪═════╪══════════╪═══════╡
+│ India   ┆ S2  ┆ 0.976524 ┆ 14355 │
+│ India   ┆ S3  ┆ 0.962221 ┆ 15167 │
+│ US      ┆ S2  ┆ 0.982085 ┆ 21435 │
+│ US      ┆ S3  ┆ 0.986005 ┆ 22865 │
+└─────────┴─────┴──────────┴───────┘
+
+Sample misses:
+  REC: Sai Marketing Private Ltd Enterprises |  
+   S1: Sai Marketing Private Limited | No.4/F2, Gajanana Apartments, Nhcs Layout 4Th Cross, Marenahalli, Vijayanagar, Bangalore, Karnataka
+  REC: साईं इंफ्रा लिमिटेड | #10A, Mumbai, MH 
+   S1: Sai Infra Limited | Floor Grd, Plot-595, La View Chs Ltd Bapurao Jagtap Marg, Saat Rasta, Jacob C, Ircle, Mumbai, Mumbai City, Maharashtra, Shop No.10A
+  REC: Network, Pacific Inc | Parker Hill Rd, Dansville, New York 
+   S1: Pacific Network, Inc | 7675 Parker Hill Road, Sparta, NY
+  REC: first chapel |  
+   S1: First Chapel | 1001 Marcy Avenue, Unit A101, Oxon Hill, MD
+  REC: Manjari & LLP Center |  
+   S1: Manjari & Sons LLP | East Delhi, Gandhi Nagar, Delhi, Ix - 7001
+  REC: ಶಕ್ತಿ ಇನ್‌ಫ್ರಾಸ್ಟ್ರಕ್ಚರ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ | Bangalore, Door No 709 Site No.1/1, KA, Bangalore 
+   S1: Shakti Infrastructure Private Limited | Site No.1/1, Sy. No: 27/2, Ramaiah Industrial Area Herohalli Cross, Mahadeshwaranagar, Vish, Waneedam P, Bangalore, Karnataka
+  REC: டிஜிட்டல் பிசினஸ் பிரைவேட் லிமிடெட் | TN, Coimbatore, Pot No 23/24, Coimbatore 
+   S1: Digital Business Private Limited | Plot No 23/24, Daksha Garden Golden Nagar, Bharathiar University Post, Coimbatore, Tamil Nadu
+  REC: Pvt. Rbscna Jai Ltd. | H.no #1St Floor, Bangalore, KA 
+   S1: Raga Jai Pvt. Ltd. | 1St Floor, # 50, 1St Block Koramangala Jakkasandra Extension, Bangalore, Karnataka
+  REC: Diversified Automation |  
+   S1: Diversified Automation Works | 115 Shadow Mountain Trail, Kalispell, MT
+  REC: Ace LLC Cénter |  
+   S1: Ace Gold LLC | 318 Elm Street, NY, East Rochester
+  REC: Lotus Consultants  Limited |  
+   S1: Lotus Consultants Limited | Lucknow, Uttar Pradesh, 30125768 Rds Srn Dt2 C2 P3 Vikram Nagar Rj Pm1, Lucknow
+  REC: Little Tavem |  
+   S1: Little Tavern | 216 Little Street, Atlanta, GA
+  REC: சவுத் அக்ரோ பிரைவேட் லிமிடெட் | #8-12A, CHENNAI, THIRUVALLUR, Tamil Nadu 
+   S1: South Agro Private Limited | No 12A, Rear C2, Srinidhi Appartment, Kandigai Street, Korattur, Chennai, Thiruvallur, Tamil Nadu
+  REC: Nagansh Asflys Private Limited | DL 
+   S1: Nagansh Alloys Private Limited | 7260, Ff, Main Road, Shakti Nagar Opposite Pnb Kamla Nagar, New Delhi, Delhi
+  REC: Perfect Consultancy Limited |  
+   S1: Perfect Consultancy | 138, 3Rd Main Road, Samvruddi Layout Subramanyapura Post, Opp: Isckon, Bengaluru, Bangalore, Karnataka
+  REC: Dream Service |  
+   S1: Dream Agro | 319/1, Choori Wali Gali, Chowk, Lucknow, Uttar Pradesh
+  REC: Sun Hospitality Private Enterprises |  
+   S1: Sun Hospitality Private Limited | No. 106J/88E, Millerpuram, Palia Road West, Tuticorin, Thoothukudi, Tamil Nadu
+  REC: Cure Naiis0 |  
+   S1: Cure Nails | Lawrenceville Town, 307 New Street, VA
+  REC: Mirage Sefes Pvt. Ltd. |  
+   S1: Mirage Services Pvt. Ltd. | 63/700, 6 Flr, Sky Tower, Mavoor Road Jun Bank Road, Kozhikode, Kerala
+  REC: Sri Korumbraecto | OFFICE NO.405, Maharashtra, PUNE 
+   S1: Rei Edtech Private Limited | Office No.405, 4Th Floor, Dnk Square, Cts No.7803, Pune, Maharashtra

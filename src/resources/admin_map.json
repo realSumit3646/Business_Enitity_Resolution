@@ -1,0 +1,18 @@
+{
+ "France": {
+  "nord": "hauts de france",
+  "gironde": "nouvelle aquitaine",
+  "loire atlantique": "pays de la loire",
+  "pas de calais": "hauts de france",
+  "st nazaire": "saint nazaire"
+ },
+ "India": {
+  "mhaaraassttr": "maharashtra",
+  "uttr prdesh": "uttar pradesh",
+  "krnaattk": "karnataka",
+  "tmilllnaattu": "tamil nadu",
+  "gujraat": "gujarat",
+  "pshcimbngg": "west bengal",
+  "telngaann": "telangana"
+ }
+}

@@ -1,0 +1,19 @@
+queries=100,000  positives=73,822  pairs=1,575,360 (15.8/rec)
+  ALL views                                        recall=0.9844  (with address 0.9945)  cands/rec= 15.8
+  v3 set (word10 skel5 numword3 + 2 keys)          recall=0.9823  (with address 0.9923)  cands/rec= 13.1
+  + numword8                                       recall=0.9828  (with address 0.9928)  cands/rec= 15.5
+  + key_name_num                                   recall=0.9840  (with address 0.9940)  cands/rec= 13.3
+  key_compact                                      recall=0.4670  (with address 0.4638)  cands/rec=  1.0
+  key_sorted                                       recall=0.4880  (with address 0.4849)  cands/rec=  1.0
+  key_name_num                                     recall=0.4973  (with address 0.5207)  cands/rec=  0.6
+shape: (4, 4)
+┌─────────┬────────────┬──────────┬───────┐
+│ country ┆ addr_empty ┆ recall   ┆ len   │
+│ ---     ┆ ---        ┆ ---      ┆ ---   │
+│ str     ┆ bool       ┆ f64      ┆ u32   │
+╞═════════╪════════════╪══════════╪═══════╡
+│ India   ┆ false      ┆ 0.989018 ┆ 28409 │
+│ India   ┆ true       ┆ 0.722372 ┆ 1113  │
+│ US      ┆ false      ┆ 0.998123 ┆ 42095 │
+│ US      ┆ true       ┆ 0.795918 ┆ 2205  │
+└─────────┴────────────┴──────────┴───────┘

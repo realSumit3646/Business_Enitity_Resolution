@@ -1,0 +1,28 @@
+# Competition data (not redistributable) and generated artefacts
+student_resource/
+data/
+cache/
+cache_*/
+output/
+output_*/
+stack_inputs/
+kaggle/
+
+# Large binaries
+*.parquet
+*.zip
+*.pt
+*.bin
+*.safetensors
+
+# Python / tooling
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

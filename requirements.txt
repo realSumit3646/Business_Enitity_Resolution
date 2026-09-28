@@ -1,0 +1,20 @@
+# core pipeline (normalisation, blocking, features, XGBoost, stage 2)
+polars==1.44.2
+pyarrow==23.0.1
+numpy==1.26.4
+scipy==1.15.3
+scikit-learn==1.7.2
+xgboost==3.2.0
+rapidfuzz==3.14.5
+Unidecode==1.4.0
+sparse_dot_topn==1.2.0
+# cross-encoder reranker (reranker/ce.py); CUDA build of torch recommended
+torch==2.11.0
+transformers==5.3.0
+# legacy v1-v3 scripts and EDA only
+lightgbm==4.6.0
+matplotlib==3.10.0
+nbformat
+# decoder-LLM reranker experiments only (qwen_probe.py, qwen_lora_probe.py, reranker/qwen_experiment)
+peft==0.21.0
+accelerate==1.15.0
